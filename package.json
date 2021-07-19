@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/StuBehan/yieldify-tech-test#readme",
   "devDependencies": {
+    "@testing-library/dom": "^8.1.0",
     "jest": "^27.0.6"
   }
 }
