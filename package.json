@@ -4,7 +4,7 @@
   "description": "- Whenever the user clicks on the page, a circle is 'fired' from the clicked position at a random speed and angle.  - When the projectile reaches the bottom of the browser window it should bounce until it stops.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
