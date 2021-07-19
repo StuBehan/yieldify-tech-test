@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/StuBehan/yieldify-tech-test/issues"
   },
-  "homepage": "https://github.com/StuBehan/yieldify-tech-test#readme"
+  "homepage": "https://github.com/StuBehan/yieldify-tech-test#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
 }
