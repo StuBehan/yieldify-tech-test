@@ -26,7 +26,7 @@ class DisplayArea {
     this.contx.fillRect(0, 0, this.canvas.width, this.canvas.height)
     this.contx.strokeStyle = 'green'
     this.contx.lineWidth= '10'
-    this.contx.strokeRect(0, 0, window.innerWidth, window.innerHeight)
+    this.contx.strokeRect(0, 0, this.canvas.width, this.canvas.height)
   }
 
   handleClick = (event) => {
@@ -36,7 +36,7 @@ class DisplayArea {
   redraw = () => {
     this.draw()
     this.balls.forEach(ball => {
-      ball.moveBall(window.innerHeight, window.innerWidth)
+      ball.moveBall(this.canvas.width, this.canvas.height)
 
       this.contx.fillStyle = 'red'
       this.contx.beginPath()
