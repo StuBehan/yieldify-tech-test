@@ -5,7 +5,8 @@ class Ball {
     this.ballY = y
     this.ballVelocityX = this.randomVelocity(fps)
     this.ballVelocityY = this.randomVelocity(fps)
-    this.gravity = 0.25
+    this.gravity = 0.2
+    this.bounce = 0.75
   }
 
   randomVelocity = (fps) => {
@@ -19,16 +20,31 @@ class Ball {
   }
 
   moveBall = (displayAreaX, displayAreaY) => {
+    this.gravityEffect(displayAreaY)
+
     this.ballX += this.ballVelocityX
-    this.ballY += this.ballVelocityY
+    this.ballY += this.ballVelocityY    
 
     if (this.ballX - this.ballDia - 10 / 2 < 0 && this.ballVelocityX < 0 || 
       this.ballX + this.ballDia + 10 / 2 > displayAreaX && this.ballVelocityX > 0) {
+      this.bounceEffect()
       this.ballVelocityX = -this.ballVelocityX
     }
     if (this.ballY - this.ballDia - 10 / 2 < 0 && this.ballVelocityY < 0 ||
       this.ballY + this.ballDia + 10 / 2 > displayAreaY && this.ballVelocityY > 0) {
+      this.bounceEffect()
       this.ballVelocityY = -this.ballVelocityY
     }
+  }
+
+  gravityEffect = (displayAreaY) => {
+    if (this.ballY <= displayAreaY - this.ballDia - 10 / 2) {
+      this.ballVelocityY = this.ballVelocityY + this.gravity
+    }
+  }
+
+  bounceEffect = () => {
+    this.ballVelocityX = this.ballVelocityX * this.bounce
+    this.ballVelocityY = this.ballVelocityY * this.bounce
   }
 }
