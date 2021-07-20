@@ -37,8 +37,7 @@ class DisplayArea {
     this.draw()
     this.balls.forEach(ball => {
       ball.moveBall(this.canvas.width, this.canvas.height)
-      
-      this.contx.fillStyle = 'red'
+      this.contx.fillStyle = `#${ball.colour}`
       this.contx.beginPath()
       this.contx.arc(ball.ballX, ball.ballY, ball.ballDia, 0, Math.PI * 2)
       this.contx.fill()

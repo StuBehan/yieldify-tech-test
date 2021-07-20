@@ -7,6 +7,7 @@ class Ball {
     this.ballVelocityY = this.randomVelocity(fps)
     this.gravity = 0.2
     this.bounce = 0.75
+    this.colour = this.randomColour()
   }
 
   randomVelocity = (fps) => {
@@ -17,6 +18,11 @@ class Ball {
     } else {
       return randVelo
     }
+  }
+
+  randomColour = () => {
+    return Math.floor(Math.random()*16777215).toString(16)
+    // 16777215 is the total number of colour combinations of RGB
   }
 
   moveBall = (displayAreaX, displayAreaY) => {
