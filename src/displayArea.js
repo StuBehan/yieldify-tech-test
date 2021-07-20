@@ -37,9 +37,7 @@ class DisplayArea {
     this.draw()
     this.balls.forEach(ball => {
       ball.moveBall(this.canvas.width, this.canvas.height)
-      console.log(`velocity: ${ball.ballVelocityX}, ${ball.ballVelocityY}`)
-      console.log(`location: ${ball.ballX}, ${ball.ballY}`)
-
+      
       this.contx.fillStyle = 'red'
       this.contx.beginPath()
       this.contx.arc(ball.ballX, ball.ballY, ball.ballDia, 0, Math.PI * 2)
