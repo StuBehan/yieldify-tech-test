@@ -24,7 +24,7 @@ class DisplayArea {
     this.contx.beginPath()
     this.contx.fillStyle = 'white'
     this.contx.fillRect(0, 0, this.canvas.width, this.canvas.height)
-    this.contx.strokeStyle = 'green'
+    this.contx.strokeStyle = 'black'
     this.contx.lineWidth= '10'
     this.contx.strokeRect(0, 0, this.canvas.width, this.canvas.height)
   }
