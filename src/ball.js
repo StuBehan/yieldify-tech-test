@@ -8,6 +8,7 @@ class Ball {
     this.gravity = 0.2
     this.bounce = 0.75
     this.colour = this.randomColour()
+    this.fps = fps
   }
 
   randomVelocity = (fps) => {
@@ -28,6 +29,7 @@ class Ball {
   moveBall = (displayAreaX, displayAreaY) => {
     this.gravityEffect(displayAreaY)
     this.stopMovement(displayAreaY)
+    this.findCanvas(displayAreaX, displayAreaY)
 
     this.ballX += this.ballVelocityX
     this.ballY += this.ballVelocityY    
@@ -61,6 +63,15 @@ class Ball {
     }
     if (this.ballVelocityY < 0.01 && this.ballVelocityY > -0.1) {
       this.ballVelocityY = 0
+    }
+  }
+
+  findCanvas = (displayAreaX, displayAreaY) => {
+    if (this.ballX > displayAreaX) {
+      this.ballVelocityX += -Math.abs(this.randomVelocity(this.fps))
+    }
+    if (this.ballY > displayAreaY) {
+      this.ballVelocityY += -Math.abs(this.randomVelocity(this.fps))
     }
   }
 }
