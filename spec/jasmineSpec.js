@@ -1,4 +1,4 @@
-const sum = require('../src/jasmine')
+const sum = require('../public/src/jasmine')
 
 describe('Jasmine Test', () => {
   it('adds a to b', () => {
